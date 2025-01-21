@@ -7892,5 +7892,16 @@
       <field type="int16_t" name="temperature" units="cdegC">Temperature</field>
       <field type="uint16_t" name="humidity" units="c%">Humidity</field>
     </message>
+    <!-- Custom message for ESP32 - PX4 Communication -->
+    <message id="700" name="OBSERVATION">
+      <description>Observation array (Send from PX4 to ESP32)</description>
+      <field type="float[23]" name="observation_array">Custom array data</field>
+    </message>
+    <message id="701" name="ACTION">
+      <description>Action array (Send from ESP32 to PX4)</description>
+      <field type="float[6]" name="action_array" >Custom array data</field>
+      <field type="float[6]" name="joint_position" >Custom array data</field>
+    </message>
+
   </messages>
 </mavlink>
