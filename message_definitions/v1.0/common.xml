@@ -2395,7 +2395,7 @@
       </entry>
       <entry value="5002" name="MAV_CMD_NAV_FENCE_POLYGON_VERTEX_EXCLUSION" hasLocation="true" isDestination="false">
         <description>Fence vertex for an exclusion polygon (the polygon must not be self-intersecting). The vehicle must stay outside this area. Minimum of 3 vertices required.
-          The vertices for a polygon must be sent sequentially, each with param1 set to the total number of vertices in the polygon.                
+          The vertices for a polygon must be sent sequentially, each with param1 set to the total number of vertices in the polygon.
         </description>
         <param index="1" label="Vertex Count" minValue="3" increment="1">Polygon vertex count. This is the number of vertices in the current polygon (all vertices will have the same number).</param>
         <param index="2">Reserved</param>
@@ -8096,12 +8096,18 @@
     <!-- Custom message for ESP32 - PX4 Communication -->
     <message id="700" name="OBSERVATION">
       <description>Observation array (Send from PX4 to ESP32)</description>
-      <field type="float[23]" name="observation_array">Custom array data</field>
+      <field type="float[23]" name="observation_array">Custom array for observation data</field>
+      <field type="float[6]" name="joint_trim" >Custom array for joint trim data</field>
     </message>
     <message id="701" name="ACTION">
       <description>Action array (Send from ESP32 to PX4)</description>
-      <field type="float[6]" name="action_array" >Custom array data</field>
-      <field type="float[6]" name="joint_position" >Custom array data</field>
+      <field type="float[6]" name="action_array" >Custom array for action data</field>
+      <field type="float[6]" name="joint_position" >Custom array for joint position data</field>
+    </message>
+    <!-- Custom message for ESP32 - PX4 Communication (Clibration Mode)-->
+    <message id="702" name="CALIBRATION">
+      <description>Calibration array (Send from PX4 to ESP32)</description>
+      <field type="uint8_t" name="calibration_mode" >Custom array for calibration mode</field>
     </message>
 
   </messages>
