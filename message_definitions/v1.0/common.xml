@@ -8095,9 +8095,13 @@
     </message>
     <!-- Custom message for ESP32 - PX4 Communication -->
     <message id="700" name="OBSERVATION">
-      <description>Observation array (Send from PX4 to ESP32)</description>
-      <field type="float[23]" name="observation_array">Custom array for observation data</field>
-      <field type="float[6]" name="joint_trim" >Custom array for joint trim data</field>
+      <description>Observation data (Send from PX4 to ESP32)</description>
+      <field type="float[4]" name="orientation">Quaternion (w, x, y, z) in NWU-FLU frame</field>
+      <field type="float[3]" name="angular_velocity">Angular velocity (rad/s) in FLU body frame</field>
+      <field type="float[3]" name="velocity_body">Velocity in FLU body frame (m/s)</field>
+      <field type="float[3]" name="velocity_inertial">Velocity in NWU inertial frame (m/s)</field>
+      <field type="float[3]" name="command">Command values (x, y, z)</field>
+      <field type="float[6]" name="joint_trim">Joint trim values</field>
     </message>
     <message id="701" name="ACTION">
       <description>Action array (Send from ESP32 to PX4)</description>
