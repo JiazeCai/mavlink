@@ -8101,6 +8101,7 @@
       <field type="float[3]" name="velocity_body">Velocity in FLU body frame (m/s)</field>
       <field type="float[3]" name="velocity_inertial">Velocity in NWU inertial frame (m/s)</field>
       <field type="float[15]" name="command">Command values (extended array)</field>
+      <field type="float[6]" name="action_final">Final action values</field>
       <field type="float[6]" name="joint_trim">Joint trim values</field>
     </message>
     <message id="701" name="ACTION">
